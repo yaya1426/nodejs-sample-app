@@ -15,7 +15,7 @@ import { Todo } from './todo/todo.entity';
       password: 'nestjs_password',
       database: 'nestjs_db',
       entities: [Todo],
-      synchronize: true, // Only for development
+      synchronize: true,
     }),
     TodoModule,
   ],
