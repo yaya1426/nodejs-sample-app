@@ -42,7 +42,7 @@ services:
       - webroot:/var/www/html
     depends_on:
       - nginx
-    command: certonly --webroot --webroot-path=/var/www/html --staging --email support@yehia.tech --agree-tos --no-eff-email -d todo.yehia.tech
+    command: certonly --webroot --webroot-path=/var/www/html --staging --email support@yehia.tech --agree-tos --no-eff-email -d todos.yehia.tech
 
   postgres:
     image: postgres:17-alpine
