@@ -1,196 +1,98 @@
-# Simple Node.js API
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+</p>
 
-A simple and robust Node.js backend API application built with Express.js, featuring Docker support, comprehensive testing, and production-ready configurations.
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-## Features
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-- 🚀 **Express.js** - Fast, unopinionated web framework
-- 🐳 **Docker** - Containerized for easy deployment
-- 🧪 **Testing** - Comprehensive test suite with Jest and Supertest
-- 🔒 **Security** - Helmet.js for security headers
-- 📝 **Logging** - Morgan for HTTP request logging
-- 🌐 **CORS** - Cross-Origin Resource Sharing enabled
-- 💻 **Development** - Hot reload with nodemon
-- 📊 **Health Checks** - Built-in health monitoring
+## Description
 
-## API Endpoints
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-### Base Routes
-- `GET /` - Welcome message and API documentation
-- `GET /health` - Health check endpoint
-
-### Users API
-- `GET /users` - Get all users
-- `GET /users/:id` - Get user by ID
-- `POST /users` - Create new user
-- `PUT /users/:id` - Update user by ID
-- `DELETE /users/:id` - Delete user by ID
-
-## Quick Start
-
-### Prerequisites
-
-- Node.js 16+ and npm
-- Docker and Docker Compose (for containerized deployment)
-
-### Local Development
-
-1. **Clone and setup**
-   ```bash
-   git clone <your-repo-url>
-   cd hostinger-nodejs
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env
-   # Edit .env file with your configurations
-   ```
-
-4. **Start development server**
-   ```bash
-   npm run dev
-   ```
-
-   The API will be available at `http://localhost:3000`
-
-5. **Run tests**
-   ```bash
-   npm test
-   # or with coverage
-   npm run test:coverage
-   ```
-
-## Docker Deployment
-
-### Production Deployment
-
-1. **Build and run with Docker Compose**
-   ```bash
-   docker-compose up -d
-   ```
-
-   The API will be available at `http://localhost:3000`
-
-### Development with Docker
-
-1. **Run development environment**
-   ```bash
-   docker-compose --profile dev up -d
-   ```
-
-   The development API will be available at `http://localhost:3001`
-
-### Manual Docker Commands
-
-1. **Build the image**
-   ```bash
-   docker build -t simple-nodejs-api .
-   ```
-
-2. **Run the container**
-   ```bash
-   docker run -p 3000:3000 -e NODE_ENV=production simple-nodejs-api
-   ```
-
-## API Usage Examples
-
-### Get all users
-```bash
-curl http://localhost:3000/users
-```
-
-### Create a new user
-```bash
-curl -X POST http://localhost:3000/users \
-  -H "Content-Type: application/json" \
-  -d '{"name": "Alice Johnson", "email": "alice@example.com"}'
-```
-
-### Get user by ID
-```bash
-curl http://localhost:3000/users/1
-```
-
-### Update user
-```bash
-curl -X PUT http://localhost:3000/users/1 \
-  -H "Content-Type: application/json" \
-  -d '{"name": "Alice Smith", "email": "alice.smith@example.com"}'
-```
-
-### Delete user
-```bash
-curl -X DELETE http://localhost:3000/users/1
-```
-
-### Health check
-```bash
-curl http://localhost:3000/health
-```
-
-## Testing
-
-The application includes a comprehensive test suite covering all API endpoints.
+## Project setup
 
 ```bash
-# Run all tests
-npm test
-
-# Run tests in watch mode
-npm run test:watch
-
-# Run tests with coverage report
-npm run test:coverage
+$ npm install
 ```
 
-## Project Structure
+## Compile and run the project
 
-```
-├── src/
-│   ├── app.js          # Express application setup
-│   └── server.js       # Server entry point
-├── tests/
-│   └── app.test.js     # API tests
-├── Dockerfile          # Docker configuration
-├── docker-compose.yml  # Docker Compose configuration
-├── package.json        # Dependencies and scripts
-├── .env.example        # Environment variables template
-├── .gitignore         # Git ignore rules
-├── .dockerignore      # Docker ignore rules
-└── README.md          # Project documentation
+```bash
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
 ```
 
-## Environment Variables
+## Run tests
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `PORT` | Server port | `3000` |
-| `NODE_ENV` | Environment mode | `development` |
+```bash
+# unit tests
+$ npm run test
 
-## Production Considerations
+# e2e tests
+$ npm run test:e2e
 
-- Replace in-memory data store with a proper database (MongoDB, PostgreSQL, etc.)
-- Add authentication and authorization
-- Implement rate limiting
-- Add request validation with a library like Joi or express-validator
-- Set up proper logging with structured logs
-- Configure monitoring and alerting
-- Add API documentation with Swagger/OpenAPI
+# test coverage
+$ npm run test:cov
+```
 
-## Contributing
+## Deployment
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+
+If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+
+```bash
+$ npm install -g @nestjs/mau
+$ mau deploy
+```
+
+With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+
+## Resources
+
+Check out a few resources that may come in handy when working with NestJS:
+
+- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
+- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
+- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
+- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
+- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
+- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
+- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
+- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+
+## Support
+
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
